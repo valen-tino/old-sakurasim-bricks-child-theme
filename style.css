@@ -1,0 +1,289 @@
+/*
+ Theme Name:   Bricks Child Theme
+ Theme URI:    https://bricksbuilder.io/
+ Description:  Use this child theme to extend Bricks.
+ Author:       Bricks
+ Author URI:   https://bricksbuilder.io/
+ Template:     bricks
+ Version:      1.1
+ Text Domain:  bricks
+*/
+
+/* Monthly Fee Style */
+span.new-monthly-fee{
+	font-weight:500;
+}
+
+span.show-total-monthly{
+	display: flex;
+}
+
+span.hide-total-monthly{
+display:none;
+}
+
+.gifts-selection {
+  	overflow: auto;
+  	white-space: nowrap;
+    gap: 10px;
+}
+
+.gift-option label{
+	display: inline-block;
+	text-decoration: none;
+	padding: 14px;
+}
+
+.gift-option input[type="radio"] {
+    display: none !important;
+}
+
+.gift-option img {
+    width: 100px; /* Adjust based on your needs */
+    height: 100%;
+    border: 2px solid transparent;
+	border-radius:8px;
+}
+
+.gift-option input[type="radio"]:checked + img {
+    border-color: #de3594; /* Highlight color when selected */
+}
+
+.gifts-selection .gift-option {
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.gifts-selection .gift-option[disabled] {
+    cursor: not-allowed;
+}
+
+.gifts-selection .gift-option img {
+    width: 100px; /* Adjust based on your needs */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gifts-selection .gift-option:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+#addonify-quick-view-modal .woocommerce .product .summary .summary-content .cart .quantity{
+	display:none;	
+}
+
+
+/* Custom Quick View Product Modal using Addonify Plugin */
+#addonify-quick-view-modal { 
+	font-family: 'Outfit'; 
+} /* Set Font Family to Outfit */
+
+#addonify-quick-view-modal h1{ 
+color:#de3594 !important; 
+	font-weight:600 !important;
+} 
+
+#addonify-quick-view-modal .woocommerce .product .summary .summary-content{
+	display:flex;
+	flex-direction:column;
+	row-gap:16px;
+}
+
+#addonify-quick-view-modal .woocommerce .product .summary .summary-content .cart {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: column;
+    float: none;
+    gap: 10px;
+    margin: 0 0 30px;
+    padding: 0;
+    align-content: flex-start;
+}
+
+#addonify-quick-view-modal .woocommerce .product .summary .summary-content .cart .button{
+    background-color: #de3594;
+    color: white;
+	float: none;
+    height: 50px;
+    margin: 0;
+    padding: 1.2rem 1.6rem;
+	border-radius: 1.6rem 0 1.6rem 0;
+    font-weight: 600;
+    justify-content: center;
+    text-decoration: none;
+	display: flex;
+}
+
+@media only screen and (max-width: 766px) {	
+#addonify-quick-view-modal #adfy-quick-view-modal-content .woocommerce .product .summary .summary-content .price{
+	font-size:24px;
+	}
+}
+
+#addonify-quick-view-modal .woocommerce .product .summary .summary-content .woocommerce-variation-monthly_fee{
+	font-weight:700;
+	font-size:16px;
+}
+
+/* End of Custom Quick View Product Modal using Addonify Plugin */
+
+
+/* Custom Thank You Page Stylesheet Part*/
+
+p.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received{
+    color: #de3594;
+}
+
+tr.total-monthly-fee{
+    background-color: #f5f6f7;
+}
+
+div.woocommerce-order{
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+div.woocommerce-order .banner-checkout-success{
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.woocommerce-order .description{
+    text-align: center;
+}
+
+div.woocommerce-order .contact{
+    text-align: center;
+}
+
+div.woocommerce-order .banner-checkout-success h1{
+    color: #de3594;
+}
+
+iframe.youtube-tutorial{
+    aspect-ratio: 16 / 9;
+    width: 100%; /* change this to a fixed width, or create a container with a width. */
+    height: 100%;
+}
+
+/* CSS for Tutorial Youtube Videos*/
+
+.language-accordion {
+    background-color: #de3594;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-size: 16px;
+  }
+  
+  .language-accordion.active, .language-accordion:hover {
+    background-color: #e158a5;
+  }
+  
+  .language-accordion:after {
+    content: '\25BC';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .language-accordion.active:after {
+    content: "\25B2";
+  }
+  
+  .panel {
+    padding: 0 8px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  tr.total-monthly-fee{
+    display:none;
+  }
+
+  a.button.alt.caa{
+    background-color: lightgray;
+  }
+
+  dt.variation-DataPlanCode, dd.variation-DataPlanCode{
+    display:none;
+  }
+
+  span.hidden-gift-slug{
+    display:none;
+  }
+
+  a.checkout_button{
+    background-color: #272a82;
+    color: white;
+    padding: 4px 16px 4px 16px;
+    border-radius: 8px 6px 8px 6px;
+  }
+
+  button.single_add_to_cart_button.button.alt.disabled-button{
+    background-color: black !important;
+    color: #aaa;
+    cursor: not-allowed;  
+}
+
+/* Container styles */
+ .monthly-fee-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 8px;
+  row-gap: 4px; /* Adjust the gap between buttons as needed */
+  margin-bottom: 16px; /* Space below the button grid */
+}
+
+/* Button styles */
+.monthlyfee-payment-button {
+    padding: 8px;
+    border-radius: 4px;
+    border: none; 
+    background-color: #eeeeee;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; 
+    font-weight: bold; 
+    margin: 5px; 
+    width: 100%;
+}
+
+/* Styles for selected button */
+.monthlyfee-payment-button.selected {
+  background-color: #de3594;
+  color: white;
+}
+
+/* Ensure the buttons don't stretch too much on larger screens */
+@media (min-width: 768px) {
+  .monthly-fee-content{
+    display:flex;
+  }
+  .monthlyfee-payment-button{
+    text-align: center;
+    padding: 8px 16px;
+  }
+}
