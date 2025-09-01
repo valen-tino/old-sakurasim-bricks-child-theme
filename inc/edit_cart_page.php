@@ -14,9 +14,11 @@ add_action('woocommerce_proceed_to_checkout', 'checkout_at_admin_button', 20);
 add_action('wp_footer', 'send_cart_data_via_webhook');
 function send_cart_data_via_webhook() {
     if (is_cart()) {
+        $nonce = wp_create_nonce('get_cart_contents_nonce');
         ?>
         <script type="text/javascript">
             jQuery(document).ready(function($) {
+                var getCartNonce = '<?php echo $nonce; ?>';
                 $('#checkout_at_admin').click(function(e) {
                     e.preventDefault();
 
@@ -24,7 +26,8 @@ function send_cart_data_via_webhook() {
                         url: '<?php echo admin_url('admin-ajax.php'); ?>',
                         type: 'POST',
                         data: {
-                            action: 'get_cart_contents'
+                            action: 'get_cart_contents',
+                            security: getCartNonce
                         },
                         success: function(response) {
                             var modifiedResponse = {};
@@ -91,6 +94,7 @@ function send_cart_data_via_webhook() {
 add_action('wp_ajax_get_cart_contents', 'get_cart_contents');
 add_action('wp_ajax_nopriv_get_cart_contents', 'get_cart_contents');
 function get_cart_contents() {
+    check_ajax_referer('get_cart_contents_nonce', 'security');
     $cart = WC()->cart->get_cart();
     wp_send_json($cart);
 }

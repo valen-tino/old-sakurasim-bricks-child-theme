@@ -104,7 +104,8 @@ function add_custom_datepicker_script()
         });
     });
 
-    var selectMonthlyFeeOption = document.getElementById('monthlyfee_payment_option')  || 'blank';
+    var selectMonthlyFeeOption = document.getElementById('monthlyfee_payment_option');
+    if (selectMonthlyFeeOption) {
     selectMonthlyFeeOption.addEventListener("change", function() {
         var selectedOption = this.value;
         var priceChangeMessage = '';
@@ -160,6 +161,7 @@ function add_custom_datepicker_script()
     var newCartTotal = cartTotal - priceChangeAmount;
     document.querySelector('.order-total .woocommerce-Price-amount bdi').textContent = newCartTotal.toLocaleString("jp-JP", {style:"currency", currency:"JPY"});
     });
+    }
 
     </script>
 
